@@ -40,5 +40,8 @@ Create new `database.yml`, you can see `database.yml.example`
 
 * Database creation andd initialization
 Open a new terminal session and execute
-`rails db:create` for create database
+`rails db:create` for create database and
 `rails db:migrate` for migrate database
+
+* Run rails server
+`rails s`
