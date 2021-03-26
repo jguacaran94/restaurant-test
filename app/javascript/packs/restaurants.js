@@ -36,6 +36,11 @@ export default class Restaurants extends React.Component {
     const reviews = [...restaurant.reviews, e]
     this.setState({ restaurant: {...restaurant, reviews} })
   }
+  randomImage(w, h) {
+    const random = Math.random()
+    const size = [w || 150, h || 150].join('/')
+    return `https://picsum.photos/${size}?${random}`
+  }
   async getRestaurants() {
     const baseUrl = 'http://localhost:3000'
     const url = `${baseUrl}/restaurants`
@@ -63,10 +68,6 @@ export default class Restaurants extends React.Component {
     this.getRestaurants()
   }
   render() {
-    const imgFolder = require.context('../images', false, /\.(png|jpe?g|svg)$/)
-    const img_node = (r) => {
-      return `${imgFolder}/rest-logo-${r.id}.png`
-    }
     return (
       <div className="restIndex">
         <h1 className="p-text-center">Restaurants</h1>
@@ -75,8 +76,11 @@ export default class Restaurants extends React.Component {
             this.state.restaurants.map(
               restaurant => (
                 <div className="p-col-12 p-md-4 p-lg-3" key={restaurant.id}>
-                  <Card title={restaurant.name}>
-                    <img src={img_node(restaurant)} />
+                  <Card title={restaurant.name} className="custom-shadow">
+                    <div className="p-d-flex p-jc-center img-container p-mb-3">
+                      {/* <img src={`../images/rest-logo-${restaurant.id}.png`} /> */}
+                      <img src={`/assets/rest-logo-${restaurant.id}.png`} className="img" />
+                    </div>
                     <div className="p-d-flex p-jc-center">
                       <Button label="See more details" onClick={() => this.restaurant(restaurant)} />
                     </div>
