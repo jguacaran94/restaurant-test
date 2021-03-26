@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'restaurants#index'
+
+  get 'restaurants', to: 'restaurants#restaurants', as: 'restaurants'
+  post 'restaurants/:id/review', to: 'restaurants#review', as: 'review'
 end

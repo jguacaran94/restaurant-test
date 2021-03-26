@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'primereact/resources/themes/saga-blue/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+@import 'primeflex/src/_variables';
+@import 'primeflex/src/_grid';
+@import 'primeflex/src/_formlayout';
+@import 'primeflex/src/_display';
+@import 'primeflex/src/_text';
+@import 'primeflex/src/flexbox/_flexbox';
+@import 'primeflex/src/_spacing';
+@import 'primeflex/src/_elevation';
+
+div.p-card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-muted {
+  color: #8a8a8a;
+}
+.text-12 {
+  font-size: .75rem;
+}
+.p-dialog {
+  width: 40.25rem;
+}
+.p-inputtext, .p-inputtextarea, .p-button#postReview {
+  width: 100%;
+}
