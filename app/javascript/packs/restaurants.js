@@ -77,12 +77,11 @@ export default class Restaurants extends React.Component {
               restaurant => (
                 <div className="p-col-12 p-md-4 p-lg-3" key={restaurant.id}>
                   <Card title={restaurant.name} className="custom-shadow">
-                    <div className="p-d-flex p-jc-center img-container p-mb-3">
-                      {/* <img src={`../images/rest-logo-${restaurant.id}.png`} /> */}
-                      <img src={`/assets/rest-logo-${restaurant.id}.png`} className="img" />
+                    <div className="p-d-flex p-jc-center img-logo-container p-mb-3">
+                      <img src={`/assets/rest-logo-${restaurant.id}.png`} className="img-logo" />
                     </div>
                     <div className="p-d-flex p-jc-center">
-                      <Button label="See more details" onClick={() => this.restaurant(restaurant)} />
+                      <Button label="See details & review" onClick={() => this.restaurant(restaurant)} />
                     </div>
                   </Card>
                 </div>
@@ -99,6 +98,11 @@ export default class Restaurants extends React.Component {
                   { this.state.restaurant.created_at }
                 </span>
               </div>
+              <div className="p-col-8">
+                <div className="p-d-flex p-jc-center img-rest-container p-my-3">
+                  <img src={`/assets/rest-${this.state.restaurant.id}.jpg`} className="img-rest" />
+                </div>
+              </div>
               <div className="p-col-8 p-text-justify">
                 <p>
                   {this.state.restaurant.description}
@@ -106,6 +110,13 @@ export default class Restaurants extends React.Component {
               </div>
               <div className="p-col-8">
                 <div className="p-grid p-nogutter p-jc-center">
+                  <Divider align="center">
+                    <span>
+                      <b>
+                        Reviews section
+                      </b>
+                    </span>
+                  </Divider>
                   <div className="p-col-8">
                     <div className="p-d-flex p-jc-center p-p-1">
                       <InputText value={this.state.inputTextValue} onChange={(e) => this.inputTextValue(e.target.value)} placeholder="Insert your username here..." />

@@ -48,11 +48,19 @@ div.p-card-title {
 .custom-shadow {
   box-shadow: 0px 3px 6px #00000029 !important;
 }
-.img-container {
+.img-logo-container {
   min-height: 8rem;
 }
-.img {
+.img-logo {
   width: 6rem;
   max-height: 6.25rem;
+  text-align: center;
+}
+.img-rest-container {
+  min-height: 8rem;
+}
+.img-rest {
+  width: 75%;
+  max-height: 75%;
   text-align: center;
 }
